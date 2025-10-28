@@ -7,9 +7,10 @@
         "duration": "2 weeks",
         "engine": "Godot",
         "language": ["C#", "GLSL"],
+        "work": ["Game Design", "Level Generation", "UI", "Art"],
         "video": "videos/obg.mp4",
         "link": "echoes-of-light",
-        "description": "This game is a Serious Game with the ambition to learn how to use Spectrums."
+        "description": "This game is a Serious Game with the ambition to learn how spectrums are used to know elements in space."
     },
     {
         "title": "Zamandra",
@@ -19,9 +20,10 @@
         "duration": "8 weeks",
         "engine": "Godot",
         "language": ["C#", "GLSL"],
+        "work": ["2D Grid", "Shaders", "Level Design", "Art"],
         "video": "videos/sokoban.mp4",
         "link": "zamandra",
-        "description": "This game is a Sokoban where some boxes can move automatically."
+        "description": "This game is a Sokoban where some boxes can move automatically and we can stop time."
     },
     {
         "title": "Find It",
@@ -31,9 +33,10 @@
         "duration": "1 week",
         "engine": "Godot",
         "language": "C#",
+        "work": ["Jam", "Game Design", "3C"],
         "video": "videos/find.mp4",
         "link": "find-him",
-        "description": "This game is a Sokoban where some boxes can move automatically."
+        "description": "This project is a game where we have to find the cat hiding in the crowd manipulating the crowd."
     },
     {
         "title": "Hope",
@@ -43,9 +46,10 @@
         "duration": "2 days",
         "engine": "Godot",
         "language": "C#",
+        "work": ["Game Design", "3C", "State Machine"],
         "video": "videos/survival.mp4",
         "link": "hope",
-        "description": "This game is a Sokoban where some boxes can move automatically."
+        "description": "In this game the player has to survive in a tragic future scenario interacting with objects and people."
     },
     {
         "title": "Dark Circus",
@@ -55,9 +59,10 @@
         "duration": "4 weeks",
         "engine": "Godot",
         "language": "C#",
+        "work": ["Level Deisign", "Juiciness", "Art"],
         "video": "videos/shmup.mp4",
         "link": "dark-circus",
-        "description": "This game is a Sokoban where some boxes can move automatically."
+        "description": "This project is a Shoot 'em up where the player can place a clone and change position with it."
     },
     {
         "title": "Chess",
@@ -67,8 +72,9 @@
         "duration": "2 weeks",
         "engine": "Pygame",
         "language": "Python",
+        "work": "2D Grid",
         "video": "videos/chess.mp4",
         "link": "chess",
-        "description": "This game is a Sokoban where some boxes can move automatically."
+        "description": "This project is a classic offline chess game where the player is only allowed to do legal moves."
     }
 ]

@@ -51,6 +51,7 @@ fetch('projects.json')
             <div class="project-work">
               <span id="project-engine">${project.engine}</span>
               ${createMetaItems("language", project.language, null)}
+              ${createMetaItems("work", project.work, null)}
             </div>
           </div>
         </div>
