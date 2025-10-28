@@ -266,13 +266,77 @@ nav{
 ============================ */
 
 #about{
-    padding-top: 150px;
+    padding: 150px 13%;
 }
 
 #about-container{
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+
+#about-text{
+    border: 0.1px solid #979797;
+    background: #c7cdd1;
+    border-radius: 5px;
+    margin-top: 75px;
+}
+
+#about-text p{
+    padding: 30px 30px;
+    font-size: 1.1rem;
+}
+
+#about-skill{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.skill-container{
+    margin-top: 30px;
+    border: 0.1px solid #979797;
+    background: #c7cdd1;
+    border-radius: 5px;
+    max-width: 600px;
+    padding: 10px 20px;
+}
+
+.skill-container h3{
+    text-align: left;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+
+}
+
+.skill-container p{
+    text-align: left;
+}
+
+#about-bonus{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.bonus-container{
+    max-width: 400px;
+    padding: 10px 20px;
+    border: 0.1px solid #979797;
+    background: #c7cdd1;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.bonus-container h3{
+    text-align: left;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+
+}
+
+.bonus-container p{
+    text-align: left;
 }
 
 
