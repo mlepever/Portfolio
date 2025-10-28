@@ -35,26 +35,22 @@ fetch('projects.json')
         const className = sanitizeClass(key);
 
         return values.map(v => `
-          <div class="meta-item ${className}">
-            ${icon ? `<img src="images/${icon}" alt="${key}" class="meta-icon">` : ''}
-            <span>${v}</span>
-          </div>
+          <span id="project-${className}">${v}</span>
         `).join('');
       };
 
       const projectHTML = `
         <div class="project-card" onclick="window.location.href='/${project.link}'" style="cursor:pointer;">
           <div class="project-video">
-            <video src="${project.video}" muted loop></video>
+            <video src="${project.video}" muted loop autoplay></video>
           </div>
           <div class="project-content">
             <h3>${project.title}</h3>
             <h4>${project.genre}</h4>
             <p>${project.description}</p>
             <div class="project-work">
-              <span>${project.team}</span>
-              <span>${project.duration}</span>
-              <span>${project.engine}</span>
+              <span id="project-engine">${project.engine}</span>
+              ${createMetaItems("language", project.language, null)}
             </div>
           </div>
         </div>
@@ -106,3 +102,15 @@ window.addEventListener("load", () => {
     }, 500);
   }, { once: true }); // Évite que ça s'exécute plusieurs fois
 });
+
+    // {
+    //     "title": "Tetris",
+    //     "genre": "Puzzle - Strategy",
+    //     "year": 2024,
+    //     "team": 1,
+    //     "duration": "1 week",
+    //     "engine": "Pygame",
+    //     "video": "videos/tetris.mp4",
+    //     "link": "tetris",
+    //     "description": "This game is a Sokoban where some boxes can move automatically."
+    // }

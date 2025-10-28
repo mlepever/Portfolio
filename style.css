@@ -244,9 +244,33 @@ nav{
 .project-work span{
     padding: 2px 4px;
     border-radius: 5px;
-    border: 2px, solid, var(--secondary-color);
-    color: var(--secondary-color);
+    /* border: 2px, solid, var(--secondary-color); */
+    color: var(--background-color);
+
 }
+
+#project-engine{
+    background-color: #c14120;
+}
+
+#project-language{
+    background-color: #c1b348;
+}
+
+/* ============================
+   Loading Screen
+============================ */
+
+#about{
+    padding-top: 150px;
+}
+
+#about-container{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 
 /* ============================
    Loading Screen

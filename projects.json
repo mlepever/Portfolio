@@ -6,6 +6,7 @@
         "team": 1,
         "duration": "2 weeks",
         "engine": "Godot",
+        "language": ["C#", "GLSL"],
         "video": "videos/obg.mp4",
         "link": "echoes-of-light",
         "description": "This game is a Serious Game with the ambition to learn how to use Spectrums."
@@ -17,6 +18,7 @@
         "team": 3,
         "duration": "8 weeks",
         "engine": "Godot",
+        "language": ["C#", "GLSL"],
         "video": "videos/sokoban.mp4",
         "link": "zamandra",
         "description": "This game is a Sokoban where some boxes can move automatically."
@@ -28,6 +30,7 @@
         "team": 4,
         "duration": "1 week",
         "engine": "Godot",
+        "language": "C#",
         "video": "videos/find.mp4",
         "link": "find-him",
         "description": "This game is a Sokoban where some boxes can move automatically."
@@ -39,6 +42,7 @@
         "team": 6,
         "duration": "2 days",
         "engine": "Godot",
+        "language": "C#",
         "video": "videos/survival.mp4",
         "link": "hope",
         "description": "This game is a Sokoban where some boxes can move automatically."
@@ -50,6 +54,7 @@
         "team": 1,
         "duration": "4 weeks",
         "engine": "Godot",
+        "language": "C#",
         "video": "videos/shmup.mp4",
         "link": "dark-circus",
         "description": "This game is a Sokoban where some boxes can move automatically."
@@ -61,19 +66,9 @@
         "team": 1,
         "duration": "2 weeks",
         "engine": "Pygame",
+        "language": "Python",
         "video": "videos/chess.mp4",
         "link": "chess",
-        "description": "This game is a Sokoban where some boxes can move automatically."
-    },
-    {
-        "title": "Tetris",
-        "genre": "Puzzle - Strategy",
-        "year": 2024,
-        "team": 1,
-        "duration": "1 week",
-        "engine": "Pygame",
-        "video": "videos/tetris.mp4",
-        "link": "tetris",
         "description": "This game is a Sokoban where some boxes can move automatically."
     }
 ]
