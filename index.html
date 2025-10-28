@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8";>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Marco Lepever</title>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loader">
+        <div class="progress-loader">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <ul id="navigation">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <ul id="contact">
+                <li><a href="https://github.com/mlepever" target="_blank"><img src="images\github.png"></a></li>
+                <li><a href="https://www.linkedin.com/in/marco-lepever/" target="_blank"><img src="images\linkedin.png"></a></li>
+                <li><a href="mailto:contact@marcolepever.com" target="_blank"><img src="images\email.png"></a></li>
+                <li id="resume"><a href="">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Marco Lepever</h2>
+        <h1>Gameplay Programmer</h1>
+        <p>Hello! I'm a gameplay programmer with experience using Unity and Godot. 
+            I enjoy working on game systems, gamefeel, shaders and 3Cs.</p>
+        <p>I'm currently studying Gameplay Programming at Isart Digital.</p>
+        <button id="scroll-btn">See My Projects</button>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div id="projects-container"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
