@@ -1,65 +1,79 @@
 [
     {
         "title": "Find Him",
+        "genre": "Reflection / Puzzle",
+        "year": 2025,
         "team": 4,
         "duration": "1 week",
         "engine": "Godot",
         "video": "videos/find.mp4",
         "link": "find-him",
-        "description": "This project is a 2D puzzle game inspired by the classic Sokoban style. What’s new? Some boxes can move automatically, increasing the challenge. Fortunately, you play as a small marionette with the power to stop time for brief moments. Your goal is to escape the tower before it collapses."
+        "description": "This game is a Sokoban where some boxes can move automatically."
     },
     {
         "title": "Hope",
+        "genre": "Survival / Exploration",
+        "year": 2025,
         "team": 6,
         "duration": "2 days",
         "engine": "Godot",
         "video": "videos/survival.mp4",
         "link": "hope",
-        "description": "This project is a 2D puzzle game inspired by the classic Sokoban style. What’s new? Some boxes can move automatically, increasing the challenge. Fortunately, you play as a small marionette with the power to stop time for brief moments. Your goal is to escape the tower before it collapses."
+        "description": "This game is a Sokoban where some boxes can move automatically."
     },
     {
         "title": "Echoes of Light",
+        "genre": "One Button Game - Serious Game",
+        "year": 2025,
         "team": 1,
         "duration": "2 weeks",
         "engine": "Godot",
         "video": "videos/obg.mp4",
         "link": "echoes-of-light",
-        "description": "This project is a 2D puzzle game inspired by the classic Sokoban style. What’s new? Some boxes can move automatically, increasing the challenge. Fortunately, you play as a small marionette with the power to stop time for brief moments. Your goal is to escape the tower before it collapses."
+        "description": "This game is a Serious Game with the ambition to learn how to use Spectrums."
     },
     {
         "title": "Zamandra",
+        "genre": "Sokoban - Puzzle Game",
+        "year": 2025,
         "team": 3,
         "duration": "8 weeks",
         "engine": "Godot",
         "video": "videos/sokoban.mp4",
         "link": "zamandra",
-        "description": "This project is a 2D puzzle game inspired by the classic Sokoban style. What’s new? Some boxes can move automatically, increasing the challenge. Fortunately, you play as a small marionette with the power to stop time for brief moments. Your goal is to escape the tower before it collapses."
+        "description": "This game is a Sokoban where some boxes can move automatically."
     },
     {
         "title": "Dark Circus",
+        "genre": "Shoot 'em up",
+        "year": 2025,
         "team": 1,
         "duration": "4 weeks",
         "engine": "Godot",
         "video": "videos/shmup.mp4",
         "link": "dark-circus",
-        "description": "This project is a 2D puzzle game inspired by the classic Sokoban style. What’s new? Some boxes can move automatically, increasing the challenge. Fortunately, you play as a small marionette with the power to stop time for brief moments. Your goal is to escape the tower before it collapses."
+        "description": "This game is a Sokoban where some boxes can move automatically."
     },
     {
         "title": "Chess",
+        "genre": "Strategy - Reflection",
+        "year": 2024,
         "team": 1,
         "duration": "2 weeks",
         "engine": "Pygame",
         "video": "videos/chess.mp4",
         "link": "chess",
-        "description": "This project is a 2D puzzle game inspired by the classic Sokoban style. What’s new? Some boxes can move automatically, increasing the challenge. Fortunately, you play as a small marionette with the power to stop time for brief moments. Your goal is to escape the tower before it collapses."
+        "description": "This game is a Sokoban where some boxes can move automatically."
     },
     {
         "title": "Tetris",
+        "genre": "Puzzle - Strategy",
+        "year": 2024,
         "team": 1,
         "duration": "1 week",
         "engine": "Pygame",
         "video": "videos/tetris.mp4",
         "link": "tetris",
-        "description": "This project is a 2D puzzle game inspired by the classic Sokoban style. What’s new? Some boxes can move automatically, increasing the challenge. Fortunately, you play as a small marionette with the power to stop time for brief moments. Your goal is to escape the tower before it collapses."
+        "description": "This game is a Sokoban where some boxes can move automatically."
     }
 ]
