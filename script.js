@@ -1,16 +1,22 @@
 document.querySelectorAll('nav a, #scroll-btn').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = this.getAttribute('href') || '#projects';
-    const section = document.querySelector(target);
-    if(section) {
-      const navHeight = document.querySelector('nav').offsetHeight;
-      const sectionTop = section.offsetTop;
-      const scrollPosition = sectionTop - navHeight;
+    const target = this.getAttribute('href');
 
-      window.scrollTo({
-        top: scrollPosition, behavior: 'smooth'
-      })
+    // Only handle internal links that start with '#'
+    if (target && target.startsWith('#')) {
+      e.preventDefault();
+
+      const section = document.querySelector(target);
+      if (section) {
+        const navHeight = document.querySelector('nav').offsetHeight;
+        const sectionTop = section.offsetTop;
+        const scrollPosition = sectionTop - navHeight;
+
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   });
 });
