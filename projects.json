@@ -1,27 +1,5 @@
 [
     {
-        "title": "Find Him",
-        "genre": "Reflection / Puzzle",
-        "year": 2025,
-        "team": 4,
-        "duration": "1 week",
-        "engine": "Godot",
-        "video": "videos/find.mp4",
-        "link": "find-him",
-        "description": "This game is a Sokoban where some boxes can move automatically."
-    },
-    {
-        "title": "Hope",
-        "genre": "Survival / Exploration",
-        "year": 2025,
-        "team": 6,
-        "duration": "2 days",
-        "engine": "Godot",
-        "video": "videos/survival.mp4",
-        "link": "hope",
-        "description": "This game is a Sokoban where some boxes can move automatically."
-    },
-    {
         "title": "Echoes of Light",
         "genre": "One Button Game - Serious Game",
         "year": 2025,
@@ -41,6 +19,28 @@
         "engine": "Godot",
         "video": "videos/sokoban.mp4",
         "link": "zamandra",
+        "description": "This game is a Sokoban where some boxes can move automatically."
+    },
+    {
+        "title": "Find It",
+        "genre": "Reflection / Puzzle",
+        "year": 2025,
+        "team": 4,
+        "duration": "1 week",
+        "engine": "Godot",
+        "video": "videos/find.mp4",
+        "link": "find-him",
+        "description": "This game is a Sokoban where some boxes can move automatically."
+    },
+    {
+        "title": "Hope",
+        "genre": "Survival / Exploration",
+        "year": 2025,
+        "team": 6,
+        "duration": "2 days",
+        "engine": "Godot",
+        "video": "videos/survival.mp4",
+        "link": "hope",
         "description": "This game is a Sokoban where some boxes can move automatically."
     },
     {
