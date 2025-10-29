@@ -242,6 +242,7 @@ nav{
     border-radius: 5px;
     /* border: 2px, solid, var(--secondary-color); */
     color: var(--background-color);
+    font-weight: 500;
 
 }
 
@@ -289,7 +290,7 @@ nav{
 }
 
 .skill-container{
-    margin-top: 30px;
+    margin-top: 40px;
     border: 0.1px solid #979797;
     background: #c7cdd1;
     border-radius: 5px;
@@ -297,16 +298,28 @@ nav{
     padding: 10px 20px;
 }
 
+.skills{
+    display: flex;  
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
 .skill-container h3{
     text-align: left;
     font-family: var(--primary-font);
     color: var(--secondary-color);
     margin-bottom: 15px;
+    font-size: 1.4rem;
 
 }
 
 .skill-container p{
     text-align: left;
+    padding: 2px 4px;
+    border-radius: 5px;
+    /* border: 2px, solid, var(--secondary-color); */
+    color: var(--background-color);
+    font-weight: 500;
 }
 
 #about-bonus{
@@ -328,7 +341,7 @@ nav{
     font-family: var(--primary-font);
     color: var(--secondary-color);
     margin-bottom: 15px;
-
+    font-size: 1.4rem;
 }
 
 .bonus-container p{
@@ -367,7 +380,7 @@ nav{
 }
 
 /* ============================
-   Loading Screen
+   Project Page
 ============================ */
 
 .project{
