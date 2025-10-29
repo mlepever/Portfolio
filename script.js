@@ -55,9 +55,9 @@ fetch('projects.json')
             <h4>${project.genre}</h4>
             <p>${project.description}</p>
             <div class="project-work">
-              <span id="project-engine">${project.engine}</span>
+              <span id="project-software">${project.engine}</span>
               ${createMetaItems("language", project.language, null)}
-              ${createMetaItems("work", project.work, null)}
+              ${createMetaItems("skills", project.work, null)}
             </div>
           </div>
         </div>

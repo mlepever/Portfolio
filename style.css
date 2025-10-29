@@ -246,7 +246,7 @@ nav{
 
 }
 
-#project-engine{
+#project-software{
     background-color: #c14120;
 }
 
@@ -254,8 +254,12 @@ nav{
     background-color: #c1b348;
 }
 
-#project-work{
+#project-skills{
     background-color: #3e7aa7;
+}
+
+#project-bonus{
+    background-color: #454a4d;
 }
 
 /* ============================
@@ -346,6 +350,11 @@ nav{
 
 .bonus-container p{
     text-align: left;
+    padding: 2px 4px;
+    border-radius: 5px;
+    /* border: 2px, solid, var(--secondary-color); */
+    color: var(--background-color);
+    font-weight: 500;
 }
 
 
