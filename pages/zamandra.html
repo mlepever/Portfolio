@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zamandra - Marco Lepever</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Montserrat:wght@900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PROJECT -->
+  <section class="project">
+    <h1>ZAMANDRA</h1>
+
+    <div class="project-resume">
+      <div class="project-info">
+        <div class="project-info-line">
+          <span>
+            <h3>Genre:</h3>
+          </span>
+          <span>
+            <p>Puzzle / Sokoban</p>
+          </span>
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Engine:</h3>
+          </span>
+          <span>
+            <p>Godot</p>
+          </span>
+          <!-- <span><img src="../images/Pygame.png"></span> -->
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Duration:</h3>
+          </span>
+          <span>
+            <p>8 weeks</p>
+          </span>
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Team:</h3>
+          </span>
+          <span>
+            <p>3</p>
+          </span>
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Platform:</h3>
+          </span>
+          <span>
+            <p>PC</p>
+          </span>
+        </div>
+      </div>
+      <div class="project-resume-video">
+        <video src="../videos/sokoban.mp4" autoplay loop muted></video>
+      </div>
+    </div>
+
+    <div class="project-work-content">
+      <h2>Context</h2>
+      <p>This project was developed in collaboration with two other gameplay programmers. 
+        The game is based on the Sokoban genre, featuring puzzle mechanics where players must strategically move boxes to solve challenges.</p>
+
+      <h2>Ambition</h2>
+      <p>Our ambition was to introduce new features that would make the game more interesting and deeper, such as moving boxes and the ability to stop time. 
+        We aimed to increase the complexity of the puzzles to create a wider variety of challenging situations. 
+        Additionally, we wanted to transform the traditionally static Sokoban gameplay into a more dynamic experience by adding more movement options and visual effects, enhancing player engagement and immersion.
+      </p>
+
+      <h2>My Work</h2>
+      <p>As a <strong>Game Designer</strong>, I worked closely with the team on the design and implementation of the game's key new features: moving boxes and the time stop mechanic. 
+        Our goal was to ensure these additions were well-integrated into the core gameplay, offering players new strategic possibilities while staying true to the Sokoban-inspired foundation.<br> <br>
+
+        As a <strong>Level Designer</strong>, I was responsible for designing one of the game’s levels, with the specific goal of highlighting and showcasing the core gameplay features.<br> <br>
+        
+        I also created some <strong>visual assets</strong>, including the boxes, walls, and targets, to support clear and consistent gameplay visuals.<br><br>
+        
+        As a <strong>Gameplay Programmer</strong>, I implemented key gameplay systems, including:</p>
+      <ul style="margin-left: 30px;">
+        <li>Grid Manager: Handled the full management of the grid system, including level initialization, state verification, and development tools for debugging and design.</li>
+        <li>Game Manager: Implemented key gameplay functionalities such as undo/redo, level reset, game initialization, and win condition checks.</li>
+        <li>Level Loading System: Developed a modular JSON-based system to load levels dynamically, enabling flexible level creation and iteration.</li>
+        <li>Input Manager: Managed player inputs and their interactions with the grid and gameplay elements.</li>
+        <li>Box Mechanics: Programmed the logic for box movement, including solo movement behavior and interaction with other game elements.</li>
+      </ul>
+
+      <h2>Code</h2>
+      <div>
+        <pre><code class="language-csharp">using Com.IsartDigital.Sokoban.Gameplay.GridObject.Movables;
+using Com.IsartDigital.Sokoban.Gameplay.Utils;
+using Godot;
+using System.Collections.Generic;
+
+//Author : LEPEVER Marco
+
+namespace Com.IsartDigital.Sokoban.Managers;
+
+public partial class GridManager : Node
+{
+    #region Singleton
+    static private GridManager instance;
+    private GridManager() { }
+    static public GridManager GetInstance()
+    {
+        if (instance == null) instance = new GridManager();
+        return instance;
+    }
+
+    public override void _Ready()
+    {
+        if (instance != null)
+        {
+            QueueFree();
+            GD.Print(nameof(GridManager) + " Instance already exist, destroying the last added.");
+            return;
+        }
+        instance = this;
+
+    }
+
+    protected override void Dispose(bool pDisposing)
+    {
+        instance = null;
+    }
+    #endregion
+
+    public static List<string> currentMap = new ();
+
+    public void InitGrid()
+    {
+        int lLengthY = currentMap.Count;
+        for (int y = 0; y < lLengthY; y++)
+        {
+            int lLengthX = currentMap[y].Length;
+            for (int x = 0; x < lLengthX; x++)
+            {
+                // if the tile is a box
+                if (Tile.BOXES_DIRECTION.Contains(currentMap[y][x]))
+                    // We add the new box the the box list, the box is created giving 
+                    // the position, the direction and his char
+                    GameManager.GetInstance().boxes.Add(IsoManager.GetInstance().InitBoxIso(x, y, 
+                        currentMap[y][x], (char)(Tile.CHAR_TO_INT + GameManager.GetInstance().boxes.Count)));
+                // else we init the object with depending of his char
+                else IsoManager.GetInstance().InitObject(x, y, Tile.charScene[GetTile(x, y)]);
+            }
+        }
+    }
+
+    public static char GetTile(int pX, int pY) => currentMap[pY][pX];
+
+    public static bool IsTileEmpty(int pX, int pY)
+    {
+        if (pX < 0 || pY < 0 || pY > currentMap.Count - 1 || pX > currentMap[pY].Length - 1) return false;
+
+        char lCase = currentMap[pY][pX];
+        return lCase == Tile.EMPTY || lCase == Tile.TARGET;
+    }
+
+    public static bool IsTileBox(int pX, int pY)
+    {
+        char lCase = currentMap[pY][pX];
+        return Tile.BOXES.Contains(lCase);
+    }
+
+    public static void UpdateTile(int pX, int pY, char pNewValue)
+    {
+        if (Tile.HAS_TARGET.Contains(currentMap[pY][pX]))
+        {
+            pNewValue = Tile.OFF_TARGET_TO_ON_TARGET[pNewValue];
+        }
+        List<char> lLine = new(currentMap[pY]) { [pX] = pNewValue };
+        currentMap[pY] = new string(lLine.ToArray());
+    }
+
+    public static int IndexOfBox(char pChar)
+    {
+        if (Tile.HAS_TARGET.Contains(pChar)) return Tile.ON_TARGET_TO_OFF_TARGET[pChar] - Tile.CHAR_TO_INT;
+        else return pChar - Tile.CHAR_TO_INT;
+    }
+
+    public static void PrintGrid()
+    {
+        string lMap = "";
+        for (int i = 0; i < currentMap.Count; i++)
+        {
+            lMap += currentMap[i] + "\n";
+        }
+        GD.Print(lMap);
+    }
+
+    public void CanPlayerMoveTowards(int pX, int pY)
+    {
+        int lArrivalPositionX = Player.GetInstance().GridPosition.X + pX;
+        int lArrivalPositionY = Player.GetInstance().GridPosition.Y + pY;
+
+        if (IsTileEmpty(lArrivalPositionX, lArrivalPositionY)) 
+            GameManager.GetInstance().MovePlayerTowards(pX, pY);
+
+        // If the arrival position is a box and the behind the box is empty 
+        else if (IsTileBox(lArrivalPositionX, lArrivalPositionY) 
+            && IsTileEmpty(lArrivalPositionX + pX, lArrivalPositionY + pY)) 
+
+                GameManager.GetInstance().MovePlayerTowards(pX, pY, 
+                    IndexOfBox(GetTile(lArrivalPositionX, lArrivalPositionY)));
+    }
+}
+</code></pre>
+
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h1>CONTACT</h1>
+    <p>Feel free to contact me if you'd like to collaborate or learn more about my work.</p>
+    <div id="contact-container">
+      <a href="https://www.linkedin.com/in/marco-lepever" target="_blank" class="contact-link"><img
+          src="../images\LinkedIn_icon.svg.png" alt="LinkedIn Logo"></a>
+      <a href="mailto:contact@marcolepever.com" target="_blank" class="contact-link"><img src="../images\email.png"
+          alt="Email Logo"></a>
+      <a href="https://github.com/mlepever" target="_blank" class="contact-link"><img
+          src="../images\github-mark-white.png" alt="Github Logo"></a>
+    </div>
+    <!-- Content to be added -->
+  </section>
+</body>

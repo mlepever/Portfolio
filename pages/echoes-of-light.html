@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zamandra - Marco Lepever</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Montserrat:wght@900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PROJECT -->
+  <section class="project">
+    <h1>ECHOES OF LIGHT</h1>
+
+    <div class="project-resume">
+      <div class="project-info">
+        <div class="project-info-line">
+          <span>
+            <h3>Genre:</h3>
+          </span>
+          <span>
+            <p>Serious Game</p>
+          </span>
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Engine:</h3>
+          </span>
+          <span>
+            <p>Godot</p>
+          </span>
+          <!-- <span><img src="../images/Pygame.png"></span> -->
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Duration:</h3>
+          </span>
+          <span>
+            <p>2 weeks</p>
+          </span>
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Team:</h3>
+          </span>
+          <span>
+            <p>1</p>
+          </span>
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Platform:</h3>
+          </span>
+          <span>
+            <p>Mobile</p>
+          </span>
+        </div>
+      </div>
+      <div class="project-resume-video">
+        <video src="../videos/obg.mp4" autoplay loop muted></video>
+      </div>
+    </div>
+
+    <div class="project-work-content">
+      <h2>Context</h2>
+      <p>This project was developed in collaboration with two other gameplay programmers. 
+        The game is based on the Sokoban genre, featuring puzzle mechanics where players must strategically move boxes to solve challenges.</p>
+
+      <h2>Ambition</h2>
+      <p>Our ambition was to introduce new features that would make the game more interesting and deeper, such as moving boxes and the ability to stop time. 
+        We aimed to increase the complexity of the puzzles to create a wider variety of challenging situations. 
+        Additionally, we wanted to transform the traditionally static Sokoban gameplay into a more dynamic experience by adding more movement options and visual effects, enhancing player engagement and immersion.
+      </p>
+
+      <h2>My Work</h2>
+      <p>As a <strong>Game Designer</strong>, I worked closely with the team on the design and implementation of the game's key new features: moving boxes and the time stop mechanic. 
+        Our goal was to ensure these additions were well-integrated into the core gameplay, offering players new strategic possibilities while staying true to the Sokoban-inspired foundation.<br> <br>
+
+        As a <strong>Level Designer</strong>, I was responsible for designing one of the game’s levels, with the specific goal of highlighting and showcasing the core gameplay features.<br> <br>
+        
+        I also created some <strong>visual assets</strong>, including the boxes, walls, and targets, to support clear and consistent gameplay visuals.<br><br>
+        
+        As a <strong>Gameplay Programmer</strong>, I implemented key gameplay systems, including:</p>
+      <ul style="margin-left: 30px;">
+        <li>Grid Manager: Handled the full management of the grid system, including level initialization, state verification, and development tools for debugging and design.</li>
+        <li>Game Manager: Implemented key gameplay functionalities such as undo/redo, level reset, game initialization, and win condition checks.</li>
+        <li>Level Loading System: Developed a modular JSON-based system to load levels dynamically, enabling flexible level creation and iteration.</li>
+        <li>Input Manager: Managed player inputs and their interactions with the grid and gameplay elements.</li>
+        <li>Box Mechanics: Programmed the logic for box movement, including solo movement behavior and interaction with other game elements.</li>
+      </ul>
+
+      <h2>Code</h2>
+      <div>
+        <pre><code class="language-csharp">using Godot;
+using System.Linq;
+using System.Text.Json;
+using System.Collections.Generic;
+using Com.IsartDigital.OneButtonGame.UI;
+using Com.IsartDigital.OneButtonGame.Utils;
+
+// Author : LEPEVER Marco
+
+namespace Com.IsartDigital.OneButtonGame.Managers;
+
+public partial class ElementManager : Node
+{
+    #region Singleton
+    static private ElementManager instance;
+    private ElementManager() { }
+    static public ElementManager GetInstance()
+    {
+        if (instance == null) instance = new ElementManager();
+        return instance;
+    }
+    #endregion
+
+    [Export] private PointLight2D rightLight;
+    [Export] private PointLight2D wrongLight;
+
+    [Export] private ScreenShake screenShake;
+
+    public int indexCurrentElement;
+    public Element currentElement;
+
+    public List<Element> possibleElements = new();
+    private List<Element> goodElements = new();
+
+    public Dictionary<string, Element> allElements;
+    private const string PATH_JSON_ELEMENTS = "res://Assets/Jsons/elements.json";
+
+    private const int MAX_POSSIBLE_ELEMENTS = 3;
+
+    private RandomNumberGenerator rand = new();
+
+    private const string RIGHT_SONG_PATH = "res://Assets/Sounds/correct.ogg";
+    private const string WRONG_SONG_PATH = "res://Assets/Sounds/wrong.ogg";
+
+    public override void _Ready()
+    {
+        #region Singleton
+        if (instance != null)
+        {
+            QueueFree();
+            GD.Print(nameof(ElementManager) + " Instance already exist, destroying the last added.");
+            return;
+        }
+        instance = this;
+        #endregion
+
+        rand.Randomize();
+        LoadAllElements();
+    }
+
+    protected override void Dispose(bool pDisposing)
+    {
+        instance = null;
+    }
+
+    public void Init()
+    {
+        possibleElements.Clear();
+        goodElements.Clear();
+
+        GenerateElements();
+
+        indexCurrentElement = 0;
+        currentElement = possibleElements[indexCurrentElement];
+    }
+
+    private void GenerateElements()
+    {
+        Star lStar = StarManager.GetInstance().currentStar;
+
+        // We pick a random element from the elements of the star
+        Element lElement = allElements[lStar.Elements[rand.RandiRange(0, lStar.Elements.Count - 1)]];
+        possibleElements.Add(lElement);
+        goodElements.Add(lElement);
+
+        int i = MAX_POSSIBLE_ELEMENTS;
+        while (i > 0)
+        {
+            // We pick a random element in the element dico
+            lElement = allElements.ElementAt(rand.RandiRange(0, allElements.Count - 1)).Value;
+
+            if (!possibleElements.Contains(lElement)) //if he the element isnt already on the list we add it
+            {
+                i--;
+                possibleElements.Add(lElement);
+
+                // if the pick is a good element we add it to the good elements list
+                if (lStar.Elements.Contains(lElement.Symbol)) goodElements.Add(lElement);
+            }
+        }
+
+        if (!GameManager.isFtue) possibleElements = Shuffle(possibleElements);
+    }
+
+    private void LoadAllElements()
+    {
+        string jsonString = FileAccess.GetFileAsString(PATH_JSON_ELEMENTS);
+        allElements = JsonSerializer.Deserialize<Dictionary<string, Element>>(jsonString);
+    }
+
+    private List<Element> Shuffle(List<Element> pListe)
+    {
+        int lListCount = pListe.Count;
+        while (lListCount > 1)
+        {
+            lListCount--;
+            int randomIndex = rand.RandiRange(0, lListCount);
+            (pListe[lListCount], pListe[randomIndex]) = (pListe[randomIndex], pListe[lListCount]);
+        }
+        return pListe;
+    }
+
+
+    public void NextElement()
+    {
+        indexCurrentElement = (indexCurrentElement + 1) % possibleElements.Count;
+        currentElement = possibleElements[indexCurrentElement];
+
+        HUD.GetInstance().SetElement();
+        WaveManager.GetInstance().PlaceElementWaves();
+    }
+
+
+    public bool IsGoodElement()
+    {
+        if (goodElements.Contains(currentElement)) return true;
+        else return false;
+    }
+
+    public void ValidateElement()
+    {
+        bool lIsGoodElement = IsGoodElement();
+        HUD.GetInstance().SetColorBackground(lIsGoodElement);
+
+        possibleElements.Remove(currentElement);
+
+        if (lIsGoodElement)
+        {
+            GameManager lGameManager = GameManager.GetInstance();
+            goodElements.Remove(currentElement);
+            PointLight(rightLight);
+            SoundManager.Play(RIGHT_SONG_PATH, "Sounds");
+
+            if (goodElements.Count == 0)
+            {
+                possibleElements.Clear();
+                if (!GameManager.isFtue)
+                {
+                    GameManager.GetInstance().AddSavedStar();
+                    HUD.GetInstance().ResetText();
+                    EndAnimation();
+                }
+                return;
+            }
+        }
+        else
+        {
+            PointLight(wrongLight);
+            screenShake.StartShake();
+            if (!GameManager.isFtue) GameManager.GetInstance().LoseLife();
+            SoundManager.Play(WRONG_SONG_PATH, "Sounds");
+        }
+
+        indexCurrentElement = indexCurrentElement % possibleElements.Count;
+        currentElement = possibleElements[indexCurrentElement];
+
+        HUD.GetInstance().SetElement();
+        WaveManager.GetInstance().PlaceElementWaves();
+    }
+
+    private void PointLight(PointLight2D pLight)
+    {
+        Tween lTween = CreateTween();
+        lTween.TweenProperty(pLight, "energy", 15, 0.1);
+        lTween.TweenProperty(pLight, "energy", 0, 0.1);
+        lTween.Finished += lTween.Kill;
+    }
+
+    private void EndAnimation()
+    {
+        InputManager.isAnim = true;
+
+        TextureRect lStar = StarManager.GetInstance().currentStarTexture;
+
+        Tween tween = CreateTween();
+        tween.TweenProperty(lStar, TweenProps.POSITION, new Vector2(-2000f, lStar.Position.Y), 0.5).
+            SetEase(Tween.EaseType.In).SetTrans(Tween.TransitionType.Expo);
+        tween.Finished += GameManager.GetInstance().IntroAnin;
+        tween.Finished += tween.Kill;
+    }
+
+
+}
+</code></pre>
+
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h1>CONTACT</h1>
+    <p>Feel free to contact me if you'd like to collaborate or learn more about my work.</p>
+    <div id="contact-container">
+      <a href="https://www.linkedin.com/in/marco-lepever" target="_blank" class="contact-link"><img
+          src="../images\LinkedIn_icon.svg.png" alt="LinkedIn Logo"></a>
+      <a href="mailto:contact@marcolepever.com" target="_blank" class="contact-link"><img src="../images\email.png"
+          alt="Email Logo"></a>
+      <a href="https://github.com/mlepever" target="_blank" class="contact-link"><img
+          src="../images\github-mark-white.png" alt="Github Logo"></a>
+    </div>
+    <!-- Content to be added -->
+  </section>
+</body>

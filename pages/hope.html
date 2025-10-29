@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zamandra - Marco Lepever</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Montserrat:wght@900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PROJECT -->
+  <section class="project">
+    <h1>HOPE</h1>
+
+    <div class="project-resume">
+      <div class="project-info">
+        <div class="project-info-line">
+          <span>
+            <h3>Genre:</h3>
+          </span>
+          <span>
+            <p>Survival / Exploration</p>
+          </span>
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Engine:</h3>
+          </span>
+          <span>
+            <p>Godot</p>
+          </span>
+          <!-- <span><img src="../images/Pygame.png"></span> -->
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Duration:</h3>
+          </span>
+          <span>
+            <p>2 days</p>
+          </span>
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Team:</h3>
+          </span>
+          <span>
+            <p>6</p>
+          </span>
+        </div>
+
+        <div class="project-info-line">
+          <span>
+            <h3>Platform:</h3>
+          </span>
+          <span>
+            <p>PC</p>
+          </span>
+        </div>
+      </div>
+      <div class="project-resume-video">
+        <video src="../videos/survival.mp4" autoplay loop muted></video>
+      </div>
+    </div>
+
+    <div class="project-work-content">
+      <h2>Context</h2>
+      <p>This project was developed during a <strong>hackathon</strong> in collaboration with the <strong>Red
+          Cross</strong>, with the goal of raising awareness about climate change and its potential impacts.
+        It envisions the world as it could be in the year 2050 if current environmental trends continue.</p>
+
+      <h2>Ambition</h2>
+      <p>The vision behind the game was to immerse the player in a realistic and tragic scenario set in the year 2050,
+        where environmental collapse has made survival a daily struggle.
+        The story follows a young migrant girl navigating a world heavily polluted and suffering from extreme food
+        scarcity. <br> <br>
+
+        Throughout the game, players can explore, interact with objects, structures, and people, and make choices that
+        shape their experience.
+        Our core ambition was to highlight how, even in the most desperate situations, human connection, mutual aid, and
+        empathy remain the most powerful tools for survival.<br> <br>
+
+        We aimed to create a balance between the harsh, dramatic reality of a world deeply damaged by human actions, and
+        the resilient, compassionate responses of people facing crisis together.
+      </p>
+
+      <h2>My Work</h2>
+      <p>As a <strong>Game Designer</strong>, I collaborated closely with the team to define the core gameplay
+        experience.
+        Together, we designed the foundational elements of the game, including the 3Cs, key features, base dialogues,
+        and the level design of the main street area.<br> <br>
+
+        On the <strong>programming</strong> side, I implemented key gameplay systems, including:</p>
+      <ul style="margin-left: 30px;">
+        <li>The player movement system with a state machine handling idle, walking, and interacting states</li>
+        <li>Camera behavior, including zoom in/out transitions during interactions</li>
+        <li>Lootable object animations for enhanced feedback and immersion</li>
+        <li>A custom Input Manager to handle player controls across different contexts</li>
+        <li>A Sound Manager to manage in-game audio, including SFX and ambient sounds</li>
+      </ul>
+
+      <h2>Code</h2>
+      <div>
+        <pre><code class="language-csharp">
+          public partial class Player : Area2D
+          {
+            #region Singleton
+            static private Player instance;
+            private Player() { }
+            static public Player GetInstance()
+            {
+              if (instance == null) instance = new Player();
+              return instance;
+            }
+              #endregion
+
+              bool stat = false;
+              public LotableZone curentZone;
+
+            [Export] private float speed = 70;
+            [Export] private float friction = 0.005f;
+            [Export] private float deltaSpeed = 1f;
+
+            [Export] public AnimatedSprite2D renderer;
+              [Export] public AnimatedSprite2D vis;
+
+              private Vector2 acceleration = Vector2.Zero;
+            private Vector2 velocity = Vector2.Zero;
+
+            private Action<float> doAction;
+
+            public override void _Ready()
+            {
+              #region Singleton
+              if (instance != null)
+              {
+                QueueFree();
+                GD.Print(nameof(Player) + " Instance already exist, destroying the last added.");
+                return;
+              }
+              instance = this;
+              #endregion
+              InitIdle();
+              }
+
+            public override void _Process(double pDelta)
+            {
+              float lDelta = (float)pDelta;
+              doAction?.Invoke(lDelta);
+                  Move(lDelta);
+              }
+          }
+        </code></pre>
+
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h1>CONTACT</h1>
+    <p>Feel free to contact me if you'd like to collaborate or learn more about my work.</p>
+    <div id="contact-container">
+      <a href="https://www.linkedin.com/in/marco-lepever" target="_blank" class="contact-link"><img
+          src="../images\LinkedIn_icon.svg.png" alt="LinkedIn Logo"></a>
+      <a href="mailto:contact@marcolepever.com" target="_blank" class="contact-link"><img src="../images\email.png"
+          alt="Email Logo"></a>
+      <a href="https://github.com/mlepever" target="_blank" class="contact-link"><img
+          src="../images\github-mark-white.png" alt="Github Logo"></a>
+    </div>
+    <!-- Content to be added -->
+  </section>
+</body>

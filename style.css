@@ -127,10 +127,6 @@ nav{
     /* max-width: 60%; */
     /* background-color: aqua; */
 }
-/* 
-#home > *:not(#scroll-btn){
-    text-align: left;
-} */
 
 #home h1{
     font-family: var(--primary-font);
@@ -368,4 +364,89 @@ nav{
     height: 3px;
     border-radius: 7px;
     background: var(--primary-color);
+}
+
+/* ============================
+   Loading Screen
+============================ */
+
+.project{
+    display:block;
+    padding: 20px 400px;
+    padding-top: 6rem;
+}
+
+.project h1{
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
+  font-size: 3rem;
+  text-align: center;
+}
+
+.project-resume{
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.project-info{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: left;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.project-info-line{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: larger;
+}
+
+.project-info-line img{
+  height: 25px;
+  width: 25px;
+  margin-left: -15px;
+}
+
+.project-resume-video{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-height: 300px;
+}
+
+.project-resume-video video{
+  aspect-ratio: 16 / 9;
+  width: auto;
+  height: 100%;
+  max-width: 100%; 
+  border-radius: 10px;
+}
+
+.project-work-content{
+  padding: 0%;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.project-work-content h2{
+    font-size: 2rem;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.project-work-content p{
+  margin-top: 3px;
+  text-align: left;
+}
+
+pre[class*="language-"]{
+  max-height: 500px;
+  overflow: auto;
+  padding: 1rem;
+  border-radius: 10px;
 }
