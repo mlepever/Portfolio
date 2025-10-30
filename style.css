@@ -7,13 +7,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins, sans-serif;
-    /* color: var(--primary-color);
-    background-color: var(--background-color); */
 }
 
 :root {
-    --height-header: 8.7vh;
-
     --primary-font: "Orbitron", sans-serif;
 
     --background-color: #1b1d22;
@@ -22,9 +18,16 @@
     --accent: #fff;
 
     --background-color: #d3d9de;
-    /* --background-color: #dfe0db; */
-    --primary-color: #1b1d22;
+    --background-color: #ededed;
+    --background-color: #f8f8f8;
+    --primary-color: #070708;
+    --primary-color: #343436;
     --secondary-color: rgb(94, 145, 94); 
+    --secondary-color: rgb(116, 163, 102); 
+}
+
+body{
+    
 }
 
 section{
@@ -197,6 +200,7 @@ nav{
 .project-card{
     border: 0.1px solid #979797;
     background: #c7cdd1;
+    background-color: #ececec;
     border-radius: 5px;
     margin-top: 50px;
     text-align: left;
@@ -241,7 +245,7 @@ nav{
     padding: 2px 4px;
     border-radius: 5px;
     /* border: 2px, solid, var(--secondary-color); */
-    color: var(--background-color);
+    color: #ececec;
     font-weight: 500;
 
 }
@@ -252,6 +256,7 @@ nav{
 
 #project-language{
     background-color: #c1b348;
+    background-color: #d6bd00;
 }
 
 #project-skills{
@@ -279,6 +284,7 @@ nav{
 #about-text{
     border: 0.1px solid #979797;
     background: #c7cdd1;
+    background-color: #ececec;
     border-radius: 5px;
     margin-top: 75px;
 }
@@ -297,6 +303,7 @@ nav{
     margin-top: 40px;
     border: 0.1px solid #979797;
     background: #c7cdd1;
+    background-color: #ececec;
     border-radius: 5px;
     max-width: 600px;
     padding: 10px 20px;
@@ -335,7 +342,7 @@ nav{
     max-width: 400px;
     padding: 10px 20px;
     border: 0.1px solid #979797;
-    background: #c7cdd1;
+    background: #ececec;
     border-radius: 5px;
     margin-top: 30px;
 }
