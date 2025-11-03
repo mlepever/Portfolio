@@ -1,0 +1,23 @@
+/* =========
+   Contact
+============ */
+
+#contact{
+    padding-right: 20px;
+    width: 100%;
+
+    position: fixed;
+    /* background-color: aqua; */
+}
+
+#contact ul{
+    text-align: right;
+    list-style: none;
+}
+
+#contact ul img{
+    width: 40px;
+    height: 40px;
+
+    filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7452%) hue-rotate(217deg) brightness(114%) contrast(98%);
+}

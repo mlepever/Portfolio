@@ -1,0 +1,76 @@
+/* ======
+  Base
+========= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+:root{
+    --primary-font: "Orbitron", sans-serif;
+
+    --background-color: #f8f8f8;
+    --primary-color: #343436;
+    --secondary-color: #74A366; 
+
+    --project-color: #ececec;
+    --border-color: #979797;
+
+    --software-color: #c14120;
+    --language-color: #d6bd00;
+    --skill-color: #3e7aa7;
+}
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+    color: var(--primary-color);
+    background-color: var(--background-color);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-left: 1px solid var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: var(--secondary-color);
+}
+
+@keyframes swipeOutRight{
+    0% {transform: translateX(0)}
+    30% {transform: translateX(-10%);}
+    100% {transform: translateX(100%);}
+}
+
+@keyframes swipeInLeft{
+    0% {transform: translateX(-100%)}
+    70% {transform: translateX(10%);}
+    100% {transform: translateX(0);}
+}
+
+@keyframes swipeInRight{
+    0% {transform: translateX(100%)}
+    70% {transform: translateX(-10%);}
+    100% {transform: translateX(0);}
+}
+
+@keyframes swipeOutLeft{
+    0% {transform: translateX(0)}
+    30% {transform: translateX(10%);}
+    100% {transform: translateX(-100%);}
+}

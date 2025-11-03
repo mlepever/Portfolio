@@ -1,0 +1,33 @@
+/* ====
+  Tag
+======= */
+
+.tag-container{
+    margin-top: 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.tag{
+    padding: 2px 4px;
+
+    font-weight: 500;
+    border-radius: 5px;
+
+    color: var(--project-color)
+}
+
+#tag-software{
+    background-color: var(--software-color);
+}
+
+#tag-language{
+    background-color: var(--language-color);
+}
+
+#tag-skill{
+    background-color: var(--skill-color);
+}

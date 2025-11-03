@@ -1,0 +1,24 @@
+/* ======
+  Card
+========= */
+
+.card{
+    text-align: left;
+
+    border-radius: 5px;
+
+    background-color: var(--project-color);
+    border: 0.1px solid var(--border-color);
+
+    justify-self: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+
+.card h3{
+    font-size: 1.5rem;
+    font-family: var(--primary-font);
+
+    color: var(--secondary-color);
+}

@@ -1,0 +1,133 @@
+[
+    {
+        "title": "Echoes of Light",
+        "link": "echoes-of-light",
+        "video": "videos/obg.mp4",
+
+        "genre": "One Button Game",
+        "platform": "Mobile",
+        "engine": "Godot",
+        "duration": "2 weeks",
+        "team": 1,
+        "year": 2025,
+
+        "software": ["Godot", "Photoshop"],
+        "language": ["C#", "Godot SL", "Git"],
+        "skill": ["Game Design", "Level Generation", "UI", "Art", "Shaders", "Serious Game"],
+
+        "description": "This game is a Serious Game with the ambition to learn how spectrums are used to know elements in space.",
+
+        "context": "This project was developed in collaboration with two other gameplay programmers. The game is based on the Sokoban genre, featuring puzzle mechanics where players must strategically move boxes to solve challenges.",
+        "ambition": "Our ambition was to introduce new features that would make the game more interesting and deeper, such as moving boxes and the ability to stop time. We aimed to increase the complexity of the puzzles to create a wider variety of challenging situations. Additionally, we wanted to transform the traditionally static Sokoban gameplay into a more dynamic experience by adding more movement options and visual effects, enhancing player engagement and immersion.",
+        "work": "Our ambition was to introduce new features that would make the game more interesting and deeper, such as moving boxes and the ability to stop time. We aimed to increase the complexity of the puzzles to create a wider variety of challenging situations. Additionally, we wanted to transform the traditionally static Sokoban gameplay into a more dynamic experience by adding more movement options and visual effects, enhancing player engagement and immersion."
+    },
+    {
+        "title": "Zamandra",
+        "link": "zamandra",
+        "video": "videos/sokoban.mp4",
+
+        "genre": "Puzzle Game",
+        "platform": "PC",
+        "engine": "Godot",
+        "team": 3,
+        "duration": "8 weeks",
+        "year": 2025,
+
+        "software": ["Godot", "Photoshop"],
+        "language": ["C#", "Godot SL", "Git"],
+        "skill": ["Game Design", "Level Deisign", "Art", "2D Grid", "Shaders"],
+
+        "description": "This game is a Sokoban where some boxes can move automatically and we can stop time.",
+
+        "context": "This project was developed in collaboration <strong>with two other gameplay programmers</strong>. The game is <strong>based on the Sokoban genre</strong>, featuring puzzle mechanics where players must strategically move boxes to solve challenges.",
+        "ambition": "Our ambition was to introduce new features that would make the game more interesting and deeper, such as <strong>moving boxes and the ability to stop time</strong>. We aimed to <strong>increase the complexity of the puzzles</strong> to create a wider variety of challenging situations. Additionally, we wanted to transform the traditionally static Sokoban gameplay into a <strong>more dynamic experience</strong> by adding more movement options and visual effects, enhancing player engagement and immersion.",
+        "work": "As a <strong>Game Designer</strong>, I worked closely with the team on the <strong>design and implementation of the game's key new features</strong>: moving boxes and the time stop mechanic. Our goal was to ensure these additions were well-integrated into the core gameplay, offering players new strategic possibilities while staying true to the Sokoban-inspired foundation.<br><br>As a <strong>Level Designer</strong>, I was responsible for <strong>designing one of the game’s levels</strong>, with the specific goal of highlighting and showcasing the core gameplay features.<br><br>I also <strong>created some visual assets</strong>, including the boxes, walls, and targets, to support clear and consistent gameplay visuals.<br><br>As a <strong>Gameplay Programmer</strong>, I implemented key gameplay systems, including:<ul><li>Grid Manager: Handled the <strong>full management of the grid system</strong>, including level initialization, state verification, and development tools for debugging and design.</li><li>Game Manager: Implemented <strong>key gameplay functionalities</strong> such as undo/redo, level reset, game initialization, and win condition checks.</li><li>Level Loading System: Developed a modular <strong>JSON-based system to load levels dynamically</strong>, enabling flexible level creation and iteration.</li><li>Input Manager: Managed <strong>player inputs and their interactions</strong> with the grid and gameplay elements.</li><li>Box Mechanics: Programmed the <strong>logic for box movement</strong>, including solo movement behavior and interaction with other game elements.</li><li>Shaders: Developed the <strong>time-stop shockwave and the grey screen filter</strong> using Godot Shader Language</li></ul>"
+    },
+    {
+        "title": "Hope",
+        "link": "hope",
+        "video": "videos/survival.mp4",
+
+        "genre": "Survival",
+        "platform": "PC",
+        "engine": "Godot",
+         "duration": "2 days",
+        "team": 6,
+        "year": 2025,
+
+        "software": "Godot",
+        "language": ["C#", "Git"],
+        "skill": ["Game Design", "3C", "Game Programming"],
+        
+        "description": "In this game the player has to survive in a tragic future scenario interacting with objects and people.",
+
+        "context": "This project was developed during a hackathon <strong>in collaboration with the Red Cross</strong>, with the goal of <strong>raising awareness about climate change and its potential impacts</strong>. It envisions the world as it could be in the year 2050 if current environmental trends continue.",
+        "ambition": "The vision behind the game was to <strong>immerse the player in a realistic and tragic scenario</strong> set in the year 2050, where environmental collapse has made survival a daily struggle. The story follows a young migrant girl navigating a <strong>world heavily polluted and suffering from extreme food scarcity</strong>.<br><br>Throughout the game, <strong>players can explore, interact with objects, structures, and people</strong>, and make choices that shape their experience. Our core ambition was to highlight how, even in the most desperate situations, <strong>human connection, mutual aid, and empathy remain the most powerful tools for survival</strong>.<br><br>We aimed to create a balance between the harsh, dramatic reality of a world deeply damaged by human actions, and the resilient, compassionate responses of people facing crisis together.",
+        "work": "As a <strong>Game Designer</strong>, I collaborated closely with the team to <strong>define the core gameplay experience</strong>. Together, we designed the foundational elements of the game, including the <strong>3Cs, key features, base dialogues, and the level design</strong> of the main street area.<br><br>On the <strong>programming</strong> side, I implemented key gameplay systems, including:<ul><li>The player movement system with a <strong>state machine handling idle, walking, and interacting states.</strong></li><li><strong>Camera behavior</strong>, including zoom in/out transitions during interactions</li><li>Lootable <strong>object animations</strong> for enhanced feedback and immersion</li><li>A custom Input Manager to handle <strong>player controls</strong> across different contexts</li><li>A Sound Manager to <strong>manage in-game audio</strong>, including SFX and ambient sounds</li></ul>"
+    },
+    {
+        "title": "Find It",
+        "link": "find-it",
+        "video": "videos/find.mp4",
+
+        "genre": "Reflection",
+        "platform": "PC",
+        "engine": "Godot",
+        "duration": "1 week",
+        "team": 4,
+        "year": 2025,      
+        
+        "software": "Godot",
+        "language": ["C#", "Git"],
+        "skill": ["Game Design", "3C", "Jam"],
+        
+        "description": "This project is a game where we have to find the cat hiding in the crowd manipulating the crowd.",
+
+        "context": "",
+        "ambition": "",
+        "work": ""
+    },
+    {
+        "title": "Dark Circus",
+        "link": "dark-circus",
+        "video": "videos/shmup.mp4",
+
+        "genre": "Shoot 'em up",
+        "platform": "PC / Console",
+        "engine": "Godot",
+        "duration": "4 weeks",
+        "team": 2,
+        "year": 2025,       
+        
+        "software": "Godot",
+        "language": "C#",
+        "skill": ["Game Design", "Level Deisign", "Game Programming"],
+        
+        
+        "description": "This project is a Shoot 'em up where the player can place a clone and change position with it.",
+        "context": "This project was developed <strong>in collaboration with Jonas Pelissou</strong>, who was in charge of music and sound design. The game is <strong>based on the Shoot 'em up genre</strong>, and our objective was to develop a complete, playable level.",
+        "ambition": "The ambition was to bring a layer of strategy to the classic shoot 'em up genre by <strong>introducing a clone mechanic</strong>. The player can place a clone that mimics their shooting, allowing them to <strong>attack from two separate positions simultaneously</strong>. Additionally, the player has a one-time <strong>ability to swap positions with the clone</strong>, enabling access to otherwise unreachable or locked areas, adding depth and tactical decision-making to the gameplay.",
+        "work": "As a <strong>Game Designer</strong>, I was responsible for <strong>designing a new core gameplay feature</strong>: the clone mechanic, which adds a strategic layer to the traditional shoot 'em up experience.<br><br>As a <strong>Level Designer</strong>, I <strong>created the entire level</strong> with the goal of showcasing and making the most of this feature through thoughtful enemy placement and progression.<br><br>As a <strong>Gameplay Programmer</strong>, I implemented all systems in a modular and clean way:<ul><li>Player: <strong>movement, shooting, upgrades, clone</strong> placement and synchronized shooting, position swapping with the clone.</li><li>Enemies: <strong>movement patterns, shooting patterns</strong>, enemy spawning.</li><li>Boss: boss behavior with <strong>multiple phases, phase synchronization with music.</strong></li><li>UI: life display, bomb counter, <strong>hud, menus.</strong></li></ul>"
+    },
+    {
+        "title": "Chess",
+        "link": "chess",
+        "video": "videos/chess.mp4",
+
+        "genre": "Strategy",
+        "platform": "PC",
+        "engine": "Pygame",
+        "duration": "1 weeks",
+        "team": 1,
+        "year": 2024,
+        
+        "software": "Pygame",
+        "language": "Python",
+        "skill": ["Game Programming", "2D Grid"],
+        
+        
+        "description": "This project is a classic offline chess game where the player is only allowed to do legal moves.",
+        "context": "This project was created <strong>using Python</strong>, the programming language I was learning <strong>in high school.</strong>",
+        "ambition": "My ambition was to <strong>reproduce an online chessboard that only allows legal moves</strong>, helping me improve my skills with tables and OOP.",
+        "work": "My work was to develop and <strong>code all the gameplay features</strong> based on the official rules of chess."    }
+]

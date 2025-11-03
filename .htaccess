@@ -1,10 +1,10 @@
+# Activer le moteur de réécriture
 RewriteEngine On
 RewriteBase /
 
-# If the requested file or directory doesn't exist
+# Si le fichier ou dossier n'existe pas
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Rewrite to /pages/thepage.html
-RewriteRule ^([a-zA-Z0-9_-]+)$ pages/$1.html [L]
-
+# Tout renvoyer vers index.html
+RewriteRule ^.*$ /index.html [L]

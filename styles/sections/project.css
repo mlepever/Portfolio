@@ -1,0 +1,79 @@
+/* ============
+   Projects
+=============== */
+
+#project{
+    display: none;
+    margin-bottom: 50px;
+    margin: 0 5%;
+}
+
+.project-resume{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: left;
+    align-items: stretch;
+    text-align: left;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.project-resume span{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 20px 30px;
+}
+
+.project-info-line{
+    display: flex;
+    
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    font-size: 1.2rem;
+
+    gap: 20px;
+}
+
+#project-text{
+    margin-top: 50px;
+    padding: 20px 30px;
+    width: 100%;
+}
+
+#project-text p{
+    text-align: justify;
+    margin-top: 10px;
+}
+
+#project-text ul{
+    margin-left: 30px;
+}
+
+#project-text ul li{
+    margin-top: 10px;
+}
+
+.project-info-line p{
+    margin-top: 0px;
+}
+
+.project-resume video{
+    background-color: #3a3a3a;
+    align-self: flex;
+    /* aspect-ratio: 16/9; */
+    width: 100%;
+    max-height: 400px;
+    border-radius: 5px 0 0px 5px;
+}
+
+pre[class*="language-"]{
+  max-height: 500px;
+  overflow: auto;
+  padding: 1rem;
+  border-radius: 10px;
+}

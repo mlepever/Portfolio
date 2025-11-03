@@ -1,0 +1,23 @@
+/* ========
+   About
+=========== */
+
+#about{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#about p{
+    margin-top: 75px;
+    padding: 30px 30px;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+#about-container{
+    margin-top: 50px;
+}
+
+#about-card{
+    padding: 10px 20px;
+}

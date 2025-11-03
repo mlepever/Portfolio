@@ -2,137 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8";>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Portfolio - Marco Lepever</title>
     <link rel="icon" href="">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.svg" type="images/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="loader">
-        <div class="progress-loader">
-            <div class="progress"></div>
+
+    <div id="loading-screen">
+        <div id="progress-bar">
+            <div id="progress"></div>
         </div>
     </div>
 
-    <header>
-        <nav>
-            <ul id="navigation">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-            <ul id="contact">
-                <li><a href="https://github.com/mlepever" target="_blank"><img src="images\github.png"></a></li>
-                <li><a href="https://www.linkedin.com/in/marco-lepever/" target="_blank"><img src="images\linkedin.png"></a></li>
-                <li><a href="mailto:contact@marcolepever.com" target="_blank"><img src="images\email.png"></a></li>
-                <li id="resume"><a href="">Resume</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <li><a onclick="navigationButton('home')">Home</a></li>
+            <li><a onclick="navigationButton('about')">About</a></li>
+            <li><a onclick="navigationButton('projects')">Projects</a></li>
+        </ul>
+    </nav>
 
-    <section id="home">
-        <h2>Marco Lepever</h2>
-        <h1>Gameplay Programmer</h1>
-        <p>Hello! I'm a gameplay programmer with experience using Unity and Godot. 
-            I enjoy working on game systems, gamefeel, shaders and 3Cs.</p>
-        <p>I'm currently studying Gameplay Programming at Isart Digital.</p>
-        <button id="scroll-btn">See My Projects</button>
-    </section>
+    <main>
+        <section id="home">
+            <h2>Marco Lepever</h2>
+            <h1>Gameplay<br>Programmer</h1>
+            <p>Hello! I'm a gameplay programmer with experience using Unity and Godot. 
+                I enjoy working on game systems, gamefeel, shaders and 3Cs.
+                <br><br>
+                I'm currently studying Gameplay Programming at Isart Digital.</p>
+            <button id="scroll-btn" onclick="navigationButton('projects')">See My Projects</button>
+        </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div id="projects-container"></div>
-    </section>
-
-    <section id="about">
-        <h2>About</h2>
-        <div id="about-text">
-            <p>
+        <section id="about">
+            <h2>About</h2>
+            <p class="card">
                 Hello I'm Marco, I'm a Gameplay Programmer living in France. I am passionate about deep and meaningful 
                 experiences and I aspire to develop them through video games. I love technical and creative challenges, 
                 whether it's developing systems specific to each game, making people feel emotions through gameplay, 
                 or creating deep stories. I am always looking for new ways to imprint my ideas into gameplay, by mastering 
                 game engines, learning new programming languages, or cultivating myself through different artistic works.
             </p>
-        </div>
-        <div id="about-skill">
-            <div class="skill-container">
-                <h3>Game Programming</h3>
-                <div class="skills">
-                    <p id="project-software">Unity</p>
-                    <p id="project-software">Godot</p>
-                    <p id="project-language">C#</p>
-                    <p id="project-language">C++</p>
-                    <p id="project-language">Git</p>
-                    <p id="project-skills">Game Systems</p>
-                    <p id="project-skills">Algorithms</p>
-                    <p id="project-skills">Code Architecture</p>
-                    <p id="project-skills">Prototyping</p>
-                    <p id="project-skills">UI</p>  
-                    <p id="project-skills">Shaders</p>                 
-                </div>
-            </div>
-            <div class="skill-container">
-                <h3>Game Design</h3>
-                <div class="skills">
-                    <p id="project-software">Office Suite</p>                
-                    <p id="project-skills">Game Systems</p>
-                    <p id="project-skills">Game Features</p>
-                    <p id="project-skills">Level Design</p>
-                    <p id="project-skills">3C</p>
-                    <p id="project-skills">Documentation</p>
-                    <p id="project-skills">OPD</p>
-                    <p id="project-skills">UX</p>
-                </div>
-            </div>
-            <div class="skill-container">
-                <h3>Game Feel</h3>
-                <div class="skills">
-                    <p id="project-language">GLSL</p>
-                    <p id="project-skills">Shaders</p>
-                    <p id="project-skills">Particles Systems</p>
-                    <p id="project-skills">Juiciness</p>
-                </div>
-            </div>
-            <div class="skill-container">
-                <h3>Art</h3>
-                <div class="skills">
-                    <p id="project-software">Photoshop</p>
-                    <p id="project-software">Blender</p>
-                    <p id="project-skills">Placeholders</p>
-                    <p id="project-skills">Hard Surface Modeling</p>
-                </div>
-        </div>
-        <!-- <div id="about-bonus">
-            <div class="bonus-container">
-                <h3>Favourite Games</h3>
-                <div class="skills">
-                    <p id="project-bonus">Elden Ring</p>
-                    <p id="project-bonus">Cyberpunk 2077</p>
-                    <p id="project-bonus">Split Fiction</p>
-                </div>
-            </div>
-            <div class="bonus-container">
-                <h3>Favourite Sports</h3>
-                <div class="skills">
-                    <p id="project-bonus">Basket Ball</p>
-                    <p id="project-bonus">Climbing</p>
-                    <p id="project-bonus">Football</p>
-                </div>
-            </div>
-            <div class="bonus-container">
-                <h3>Favourite Shows</h3>
-                <div class="skills">
-                    <p id="project-bonus">Dragon Ball</p>
-                    <p id="project-bonus">The Social Network</p>
-                    <p id="project-bonus">Cyberpunk Edgerunners</p>
-                </div>
-            </div> -->
-        </div>
-    </section>
+            <div class="container" id="about-container"></div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="container" id="projects-container"></div>
+        </section>
+    </main>
+
+    <section id="project-container"></section>
 
     <script src="script.js"></script>
+
 </body>
 </html>

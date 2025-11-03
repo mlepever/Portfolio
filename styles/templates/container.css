@@ -1,0 +1,19 @@
+/* ==========
+  Container
+============= */
+
+.container{
+    display: grid;
+    justify-self: center;
+    grid-template-columns: repeat(2, 1fr);
+
+    max-width: 1200px;
+
+    gap: 30px;
+}
+
+.container video{
+    width: 100%;
+
+    border-radius: 5px 5px 0 0;
+}

@@ -1,0 +1,25 @@
+[
+    {
+        "category": "Game Programming",
+        "software": ["Unity", "Godot"],
+        "language": ["C#", "C++", "Godot SL", "Git"],
+        "skill": ["Game Systems", "Algorithms", "Code Architecture", 
+            "Prototyping", "Object-Oriented Programming", "Shaders", 
+            "Particles Systems"]
+    },
+    {
+        "category": "Game Design",
+        "software": "Office Suite",
+        "skill": ["Game Systems", "Game Features", "Level Design", 
+            "3C", "Documentation", "OPD", "UX"]
+    },
+    {
+        "category": "Art",
+        "software": ["Photoshop", "Blender"],
+        "skill": ["Placeholders", "Hard Surface Modeling"]
+    },
+    {
+        "category": "Soft Skills",
+        "skill": ["Project Management", "Conflict Management", "Communication"]
+    }
+]

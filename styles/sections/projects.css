@@ -1,0 +1,35 @@
+/* ============
+   Projects
+=============== */
+
+#projects{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#projects-container{
+    margin-top: 80px;
+}
+
+.project-content{
+    padding: 10px 20px;
+}
+
+.project-content h3{
+    font-size: 1.5rem;
+    font-family: var(--primary-font);
+
+    color: var(--secondary-color);
+}
+
+.project-content h4{
+    margin-top: 5px;
+    
+    font-weight: 600;
+
+    color: var(--primary-color);
+}
+
+.project-content p{
+    margin-top: 10px;
+}
