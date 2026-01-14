@@ -1,7 +1,7 @@
 @import url('styles/base.css');
 
 @import url('styles/header/navigation.css');
-/* @import url('styles/header/contact.css'); */
+ @import url('styles/header/contact.css');
 
 @import url('styles/sections/section.css');
 @import url('styles/sections/home.css');

@@ -17,9 +17,9 @@
 
         "description": "This game is a Serious Game with the ambition to learn how spectrums are used to know elements in space.",
 
-        "context": "This project was developed in collaboration with two other gameplay programmers. The game is based on the Sokoban genre, featuring puzzle mechanics where players must strategically move boxes to solve challenges.",
-        "ambition": "Our ambition was to introduce new features that would make the game more interesting and deeper, such as moving boxes and the ability to stop time. We aimed to increase the complexity of the puzzles to create a wider variety of challenging situations. Additionally, we wanted to transform the traditionally static Sokoban gameplay into a more dynamic experience by adding more movement options and visual effects, enhancing player engagement and immersion.",
-        "work": "Our ambition was to introduce new features that would make the game more interesting and deeper, such as moving boxes and the ability to stop time. We aimed to increase the complexity of the puzzles to create a wider variety of challenging situations. Additionally, we wanted to transform the traditionally static Sokoban gameplay into a more dynamic experience by adding more movement options and visual effects, enhancing player engagement and immersion."
+        "context": "Work in progress",
+        "ambition": "Work in progress",
+        "work": "Work in progress"
     },
     {
         "title": "Zamandra",
@@ -83,9 +83,9 @@
         
         "description": "This project is a game where we have to find the cat hiding in the crowd manipulating the crowd.",
 
-        "context": "",
-        "ambition": "",
-        "work": ""
+        "context": "Work in progress",
+        "ambition": "Work in progress",
+        "work": "Work in progress"
     },
     {
         "title": "Dark Circus",
@@ -126,7 +126,7 @@
         "skill": ["Game Programming", "2D Grid"],
         
         
-        "description": "This project is a classic offline chess game where the player is only allowed to do legal moves.",
+        "description": "This project is a classic offline chess game where the player is only allowed to play legal moves.",
         "context": "This project was created <strong>using Python</strong>, the programming language I was learning <strong>in high school.</strong>",
         "ambition": "My ambition was to <strong>reproduce an online chessboard that only allows legal moves</strong>, helping me improve my skills with tables and OOP.",
         "work": "My work was to develop and <strong>code all the gameplay features</strong> based on the official rules of chess."    }
