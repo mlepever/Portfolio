@@ -1,5 +1,27 @@
 [
     {
+        "title": "Mousic",
+        "link": "mousic",
+        "video": "videos/obg.mp4",
+
+        "genre": "Rhythm",
+        "platform": "PC",
+        "engine": "Unity",
+        "duration": "4 days",
+        "team": 6,
+        "year": 2026,
+
+        "software": [ "Unity" ],
+        "language": [ "C#", "Git" ],
+        "skill": [ "Game Design", "UI", "Shaders" ],
+
+        "description": "Description",
+
+        "context": "Work in progress",
+        "ambition": "Work in progress",
+        "work": "Work in progress"
+    },
+    {
         "title": "Carambolage",
         "link": "carambolage",
         "video": "videos/obg.mp4",
